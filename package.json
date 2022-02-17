@@ -1,0 +1,14 @@
+{
+  "name": "mini-vue-pro-3.x",
+  "version": "1.0.0",
+  "main": "main.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^17.0.17",
+    "vite": "^2.8.1"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite"
+  }
+}
