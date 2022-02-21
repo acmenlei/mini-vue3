@@ -1,4 +1,5 @@
 import { ShapeFlags } from "../shared/shapeFlags"
+// import { isString } from "../utils"
 import { VNode } from "./vnode"
 
 // 渲染虚拟DOM节点到容器
@@ -25,15 +26,15 @@ function mount(
 export function mountElement(vnode: VNode, container: HTMLElement) {
   const { type, props, children } = vnode
   const el = document.createElement(type)
+  mountChildren(children, el)
   mountProps(el, props)
-  mountChildren(vnode, el)
 }
 
 export function mountTextNode(vnode: VNode, container: HTMLElement) { }
 export function mountFragment(vnode: VNode, container: HTMLElement) { }
 export function mountComponent(vnode: VNode, container: HTMLElement) { }
-export function mountChildren(vnode: VNode, el: HTMLElement) {
-  
+export function mountChildren(vnode: any, el: HTMLElement) {  
+ 
 }
 export function mountProps(el: HTMLElement, props: object = {}) {
 

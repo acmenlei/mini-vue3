@@ -1,4 +1,4 @@
-import { reactive } from "../reactive/reactive"
+import { reactive } from "../reactivity/reactive"
 
 export function isObject(origin: any) {
   return typeof origin == 'object' && origin != null
