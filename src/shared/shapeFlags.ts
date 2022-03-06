@@ -8,7 +8,7 @@ export const enum ShapeFlags {
   COMPONENT = 1 << 3,
   TEXT_COMPONENT = 1 << 4,
   ARRAY_CHILDREN = 1 << 5,
-  TEXT_CHILDREN = (1 << 4) | (1 << 5),
+  TEXT_CHILDREN = 1 << 6,
 }
 
 // 用 symbol 作为type的唯一标识

@@ -1,9 +1,10 @@
-import { computed } from "./reactive/computed";
-import { watchEffect } from "./reactive/effect";
-import { reactive } from "./reactive/reactive";
-import { ref, RefImpl } from "./reactive/ref";
+import { computed } from "./reactivity/computed";
+import { watchEffect } from "./reactivity/effect";
+import { reactive } from "./reactivity/reactive";
+import { ref, RefImpl } from "./reactivity/ref";
 import { render } from "./runtime-core/renderer";
 import { h } from "./runtime-core/vnode";
+import { Text } from "./shared/shapeFlags";
 // reactive测试
 // const obj = (window as any).obj = reactive({
 //   name: 'coderlei',
@@ -42,4 +43,17 @@ import { h } from "./runtime-core/vnode";
 //   h('p', { class: 'child-ctn' }, '我是子元素内容')
 // ])
 
-// render(vnode, document.querySelector("#app"))
+let vnode = h('div', {
+  class: 'coder',
+  onClick: () => console.log('点击'),
+  style: {
+    height: '100px',
+    background: 'red'
+  }
+}, [
+  h(Text, null, '我是内容'),
+  h('p', { style: { color: 'yellow' } }, '我是内容'),
+  h('div', null, '我是内容'),
+])
+
+render(vnode, document.querySelector("#app"))

@@ -4,7 +4,7 @@ import { isArray, isString } from "../utils";
 export type VNode = {
   type: any,
   props: object,
-  children: string | null | Array<any>,
+  children: any,
   shapeFlag: any
 }
 
